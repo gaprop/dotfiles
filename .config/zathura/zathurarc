@@ -1,0 +1,26 @@
+set page-padding 1
+set statusbar-h-padding 0
+set statusbar-v-padding 0
+
+set selection-clipboard clipboard
+set sandbox none
+
+set font "Fira Code 12"
+
+set default-fg "#58697B"
+set default-bg "#090611"
+
+set recolor-lightcolor "#090611"
+set recolor-darkcolor "#9e9e9e"
+
+map D toggle_page_mode
+map K zoom in
+map J zoom out
+
+map u scroll half-up
+map d scroll half-down
+map R rotate
+
+map r reload
+map i recolor
+
