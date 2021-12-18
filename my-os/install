@@ -1,0 +1,124 @@
+#!/bin/sh
+
+# sudo pacman -S artix-archlinux-support
+# sudo pacman-key --populate archlinux
+
+# echo "" | sudo tee -a  /etc/pacman.conf
+# echo "# Arch" | sudo tee -a  /etc/pacman.conf
+# echo "[extra]" | sudo tee -a  /etc/pacman.conf
+# echo "Include = /etc/pacman.d/mirrorlist-arch" | sudo tee -a  /etc/pacman.conf
+# echo "" | sudo tee -a  /etc/pacman.conf
+# echo "[community]" | sudo tee -a  /etc/pacman.conf
+# echo "Include = /etc/pacman.d/mirrorlist-arch" | sudo tee -a  /etc/pacman.conf
+# echo "" | sudo tee -a  /etc/pacman.conf
+# echo "[multilib]" | sudo tee -a  /etc/pacman.conf
+# echo "Include = /etc/pacman.d/mirrorlist-arch" | sudo tee -a  /etc/pacman.conf
+# echo "" | sudo tee -a  /etc/pacman.conf
+
+pkglist="./pkglist"
+aurpkglist="./aur-pkglist"
+
+echo "-----------------------------------------------------------"
+echo "Creating basic directories"
+echo "-----------------------------------------------------------"
+
+# mkdir $HOME/.local
+# mkdir $HOME/.config
+# mkdir $HOME/.cache
+# mkdir $HOME/docs
+# mkdir $HOME/books
+# mkdir $HOME/down
+# mkdir $HOME/music
+# mkdir $HOME/pics
+# mkdir $HOME/vdeo
+# 
+echo "-----------------------------------------------------------"
+echo "Updating system and installing packages"
+echo "-----------------------------------------------------------"
+
+sudo pacman -Syu
+sudo pacman -S - < "$pkglist"
+
+
+echo "-----------------------------------------------------------"
+echo "Installing yay"
+echo "-----------------------------------------------------------"
+
+# git clone https://aur.archlinux.org/yay.git
+# cd yay
+# makepkg -si
+# cd ..
+# rm -rf yay
+
+echo "-----------------------------------------------------------"
+echo "Installing aur packages"
+echo "-----------------------------------------------------------"
+
+yay -S - < "$aurpkglist"
+
+
+echo "-----------------------------------------------------------"
+echo "Seting up ssh"
+echo "-----------------------------------------------------------"
+
+# echo "Enter email: "
+# read email
+# ssh-keygen -t ed25519 -C "$email"
+# eval "$(ssh-agent -s)"
+# ssh-add "$HOME"/.ssh/id_ed25519
+
+echo "-----------------------------------------------------------"
+echo "Installing other suckless stuff"
+echo "-----------------------------------------------------------"
+
+git clone https://github.com/gaprop/st.git
+mv st "$HOME"/.local/share/
+cd "$HOME"/.local/share/st
+sudo make clean install
+
+# TODO: Might wanne remove this line
+cd ~/my-os
+
+git clone https://github.com/gaprop/dmenu.git
+mv dmenu "$HOME"/.local/share/
+cd "$HOME"/.local/share/dmenu
+sudo make clean install
+
+# TODO: Might wanne remove this line
+cd ~/my-os
+
+echo "-----------------------------------------------------------"
+echo "Installing rust"
+echo "-----------------------------------------------------------"
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup update
+
+
+echo "-----------------------------------------------------------"
+echo "Configuring packages"
+echo "-----------------------------------------------------------"
+
+git clone https://github.com/gaprop/cooless-rice.git
+
+# chsh -s /bin/zsh
+
+echo "Copying config files to .config"
+cp -r cooless-rice/.config $HOME/
+echo "Copying binary files to .local/bin"
+cp -r cooless-rice/.local/bin $HOME/.local/
+
+echo "Setting up shell files"
+cp -r cooless-rice/.local/share/zsh "$HOME"/.local/share
+
+echo "Creating xmonad directories"
+mkdir "$HOME"/.local/share/xmonad
+mkdir "$HOME"/.cache/xmonad
+
+echo "-----------------------------------------------------------"
+echo "Starting services"
+echo "-----------------------------------------------------------"
+
+echo "-----------------------------------------------------------"
+echo "Remeber to set up ssh, there are things you have to manually"
+echo "-----------------------------------------------------------"
