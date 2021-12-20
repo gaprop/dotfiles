@@ -5,6 +5,7 @@ openssh
 neovim
 xorg
 xorg-xinit
+alsa-utils-openrc
 pulseaudio
 pulseaudio-alsa
 pulseaudio-bluetooth
@@ -32,3 +33,8 @@ noto-fonts-emoji
 ttf-font-awesome
 ttf-fira-code
 xclip
+python
+python2
+python-pip
+fzf
+ueberzug
