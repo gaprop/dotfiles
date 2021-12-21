@@ -1,0 +1,1 @@
+/home/anders/.config/shell/profile
