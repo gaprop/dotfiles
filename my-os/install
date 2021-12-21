@@ -114,6 +114,7 @@ cp -r cooless-rice/.local/share/zsh "$HOME"/.local/share
 echo "Creating xmonad directories"
 mkdir "$HOME"/.local/share/xmonad
 mkdir "$HOME"/.cache/xmonad
+xmonad --recompile
 
 # echo "Installing plug and relevant packages for vim"
 # sh -c 'curl -flo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
@@ -126,10 +127,23 @@ echo "Starting services"
 echo "-----------------------------------------------------------"
 
 # sudo rc-update add alsasound
+# sudo rc-update add bluetoothd
 
 echo "-----------------------------------------------------------"
 echo "Cleaning up ~/"
 echo "-----------------------------------------------------------"
+
+# Instead of $HOME, you could probably just use the $XDG_* instead
+mv "$HOME"/.cargo "$HOME"/.local/share
+mv "$HOME"/.rustup "$HOME"/.local/share
+
+mkdir -p "$HOME"/.config/pki/nssdb
+mkdir -p "$HOME"/.local/share/pki/nssdb
+mv "$HOME"/.pki/nssdb/pkcs11.txt "$HOME"/.config/pki/nssdb
+mv "$HOME"/.pki/nssdb/cert9.db "$HOME"/.local/share/pki/nssdb
+mv "$HOME"/.pki/nssdb/key4.db "$HOME"/.local/share/pki/nssdb
+
+rm -r "$HOME"/.pki
 
 # echo "-----------------------------------------------------------"
 # echo "Remeber to set up ssh, there are things you have to manually"

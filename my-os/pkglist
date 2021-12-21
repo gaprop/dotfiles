@@ -5,6 +5,8 @@ openssh
 neovim
 xorg
 xorg-xinit
+bluez-utils
+bluez-openrc
 alsa-utils-openrc
 pulseaudio
 pulseaudio-alsa
