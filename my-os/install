@@ -91,8 +91,8 @@ echo "-----------------------------------------------------------"
 echo "Installing rust"
 echo "-----------------------------------------------------------"
 
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-rustup update
+# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+# rustup update
 
 
 echo "-----------------------------------------------------------"
@@ -134,20 +134,20 @@ echo "Cleaning up ~/"
 echo "-----------------------------------------------------------"
 
 # Instead of $HOME, you could probably just use the $XDG_* instead
-mv "$HOME"/.cargo "$HOME"/.local/share
-mv "$HOME"/.rustup "$HOME"/.local/share
-
-mkdir -p "$HOME"/.config/pki/nssdb
-mkdir -p "$HOME"/.local/share/pki/nssdb
-mv "$HOME"/.pki/nssdb/pkcs11.txt "$HOME"/.config/pki/nssdb
-mv "$HOME"/.pki/nssdb/cert9.db "$HOME"/.local/share/pki/nssdb
-mv "$HOME"/.pki/nssdb/key4.db "$HOME"/.local/share/pki/nssdb
-rm -r "$HOME"/.pki
-
-mkdir -p "$HOME"/.cache/zsh
-
-mkdir -p "$HOME"/.config/git
-mv "$HOME"/.gitconfig "$HOME"/.config/git/config
+# mv "$HOME"/.cargo "$HOME"/.local/share
+# mv "$HOME"/.rustup "$HOME"/.local/share
+# 
+# mkdir -p "$HOME"/.config/pki/nssdb
+# mkdir -p "$HOME"/.local/share/pki/nssdb
+# mv "$HOME"/.pki/nssdb/pkcs11.txt "$HOME"/.config/pki/nssdb
+# mv "$HOME"/.pki/nssdb/cert9.db "$HOME"/.local/share/pki/nssdb
+# mv "$HOME"/.pki/nssdb/key4.db "$HOME"/.local/share/pki/nssdb
+# rm -r "$HOME"/.pki
+# 
+# mkdir -p "$HOME"/.cache/zsh
+# 
+# mkdir -p "$HOME"/.config/git
+# mv "$HOME"/.gitconfig "$HOME"/.config/git/config
 
 # echo "-----------------------------------------------------------"
 # echo "Remeber to set up ssh, there are things you have to manually"
