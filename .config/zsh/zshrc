@@ -1,4 +1,10 @@
 
+# History
+HISTFILE=~/.cache/zsh/history
+HISTSIZE=1000
+SAVEHIST=1000
+
+
 stty stop undef # Disable ctrl-s to freeze terminal
 
 # My theme

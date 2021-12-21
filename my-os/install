@@ -142,8 +142,12 @@ mkdir -p "$HOME"/.local/share/pki/nssdb
 mv "$HOME"/.pki/nssdb/pkcs11.txt "$HOME"/.config/pki/nssdb
 mv "$HOME"/.pki/nssdb/cert9.db "$HOME"/.local/share/pki/nssdb
 mv "$HOME"/.pki/nssdb/key4.db "$HOME"/.local/share/pki/nssdb
-
 rm -r "$HOME"/.pki
+
+mkdir -p "$HOME"/.cache/zsh
+
+mkdir -p "$HOME"/.config/git
+mv "$HOME"/.gitconfig "$HOME"/.config/git/config
 
 # echo "-----------------------------------------------------------"
 # echo "Remeber to set up ssh, there are things you have to manually"
