@@ -25,13 +25,13 @@ echo "-----------------------------------------------------------"
 # mkdir $HOME/.local
 # mkdir $HOME/.config
 # mkdir $HOME/.cache
-# mkdir $HOME/docs
-# mkdir $HOME/books
-# mkdir $HOME/down
-# mkdir $HOME/music
-# mkdir $HOME/pics
-# mkdir $HOME/vdeo
-# 
+mkdir $HOME/docs
+mkdir $HOME/books
+mkdir $HOME/down
+mkdir $HOME/music
+mkdir $HOME/pics
+mkdir $HOME/vdeo
+ 
 echo "-----------------------------------------------------------"
 echo "Updating system and installing packages"
 echo "-----------------------------------------------------------"
@@ -44,11 +44,11 @@ echo "-----------------------------------------------------------"
 echo "Installing yay"
 echo "-----------------------------------------------------------"
 
-# git clone https://aur.archlinux.org/yay.git
-# cd yay
-# makepkg -si
-# cd ..
-# rm -rf yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ..
+rm -rf yay
 
 echo "-----------------------------------------------------------"
 echo "Installing aur packages"
@@ -61,11 +61,11 @@ echo "-----------------------------------------------------------"
 echo "Seting up ssh"
 echo "-----------------------------------------------------------"
 
-# echo "Enter email: "
-# read email
-# ssh-keygen -t ed25519 -C "$email"
-# eval "$(ssh-agent -s)"
-# ssh-add "$HOME"/.ssh/id_ed25519
+echo "Enter email: "
+read email
+ssh-keygen -t ed25519 -C "$email"
+eval "$(ssh-agent -s)"
+ssh-add "$HOME"/.ssh/id_ed25519
 
 echo "-----------------------------------------------------------"
 echo "Installing other suckless stuff"
@@ -91,8 +91,8 @@ echo "-----------------------------------------------------------"
 echo "Installing rust"
 echo "-----------------------------------------------------------"
 
-# curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-# rustup update
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup update
 
 
 echo "-----------------------------------------------------------"
@@ -101,7 +101,7 @@ echo "-----------------------------------------------------------"
 
 git clone https://github.com/gaprop/cooless-rice.git
 
-# chsh -s /bin/zsh
+chsh -s /bin/zsh
 
 echo "Copying config files to .config"
 cp -r cooless-rice/.config $HOME/
@@ -116,38 +116,38 @@ mkdir "$HOME"/.local/share/xmonad
 mkdir "$HOME"/.cache/xmonad
 xmonad --recompile
 
-# echo "Installing plug and relevant packages for vim"
-# sh -c 'curl -flo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-#   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+echo "Installing plug and relevant packages for vim"
+sh -c 'curl -flo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# sudo pip install pynvim
+sudo pip install pynvim
 
 echo "-----------------------------------------------------------"
 echo "Starting services"
 echo "-----------------------------------------------------------"
 
-# sudo rc-update add alsasound
-# sudo rc-update add bluetoothd
+sudo rc-update add alsasound
+sudo rc-update add bluetoothd
 
 echo "-----------------------------------------------------------"
 echo "Cleaning up ~/"
 echo "-----------------------------------------------------------"
 
 # Instead of $HOME, you could probably just use the $XDG_* instead
-# mv "$HOME"/.cargo "$HOME"/.local/share
-# mv "$HOME"/.rustup "$HOME"/.local/share
-# 
-# mkdir -p "$HOME"/.config/pki/nssdb
-# mkdir -p "$HOME"/.local/share/pki/nssdb
-# mv "$HOME"/.pki/nssdb/pkcs11.txt "$HOME"/.config/pki/nssdb
-# mv "$HOME"/.pki/nssdb/cert9.db "$HOME"/.local/share/pki/nssdb
-# mv "$HOME"/.pki/nssdb/key4.db "$HOME"/.local/share/pki/nssdb
-# rm -r "$HOME"/.pki
-# 
-# mkdir -p "$HOME"/.cache/zsh
-# 
-# mkdir -p "$HOME"/.config/git
-# mv "$HOME"/.gitconfig "$HOME"/.config/git/config
+mv "$HOME"/.cargo "$HOME"/.local/share
+mv "$HOME"/.rustup "$HOME"/.local/share
+
+mkdir -p "$HOME"/.config/pki/nssdb
+mkdir -p "$HOME"/.local/share/pki/nssdb
+mv "$HOME"/.pki/nssdb/pkcs11.txt "$HOME"/.config/pki/nssdb
+mv "$HOME"/.pki/nssdb/cert9.db "$HOME"/.local/share/pki/nssdb
+mv "$HOME"/.pki/nssdb/key4.db "$HOME"/.local/share/pki/nssdb
+rm -r "$HOME"/.pki
+
+mkdir -p "$HOME"/.cache/zsh
+
+mkdir -p "$HOME"/.config/git
+mv "$HOME"/.gitconfig "$HOME"/.config/git/config
 
 # echo "-----------------------------------------------------------"
 # echo "Remeber to set up ssh, there are things you have to manually"
