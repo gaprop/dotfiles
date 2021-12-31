@@ -1,19 +1,19 @@
 #!/bin/sh
 
-# sudo pacman -S artix-archlinux-support
-# sudo pacman-key --populate archlinux
+sudo pacman -S artix-archlinux-support
+sudo pacman-key --populate archlinux
 
-# echo "" | sudo tee -a  /etc/pacman.conf
-# echo "# Arch" | sudo tee -a  /etc/pacman.conf
-# echo "[extra]" | sudo tee -a  /etc/pacman.conf
-# echo "Include = /etc/pacman.d/mirrorlist-arch" | sudo tee -a  /etc/pacman.conf
-# echo "" | sudo tee -a  /etc/pacman.conf
-# echo "[community]" | sudo tee -a  /etc/pacman.conf
-# echo "Include = /etc/pacman.d/mirrorlist-arch" | sudo tee -a  /etc/pacman.conf
-# echo "" | sudo tee -a  /etc/pacman.conf
-# echo "[multilib]" | sudo tee -a  /etc/pacman.conf
-# echo "Include = /etc/pacman.d/mirrorlist-arch" | sudo tee -a  /etc/pacman.conf
-# echo "" | sudo tee -a  /etc/pacman.conf
+echo "" | sudo tee -a  /etc/pacman.conf
+echo "# Arch" | sudo tee -a  /etc/pacman.conf
+echo "[extra]" | sudo tee -a  /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist-arch" | sudo tee -a  /etc/pacman.conf
+echo "" | sudo tee -a  /etc/pacman.conf
+echo "[community]" | sudo tee -a  /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist-arch" | sudo tee -a  /etc/pacman.conf
+echo "" | sudo tee -a  /etc/pacman.conf
+echo "[multilib]" | sudo tee -a  /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist-arch" | sudo tee -a  /etc/pacman.conf
+echo "" | sudo tee -a  /etc/pacman.conf
 
 pkglist="./pkglist"
 aurpkglist="./aur-pkglist"
