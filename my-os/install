@@ -22,7 +22,7 @@ echo "-----------------------------------------------------------"
 echo "Creating basic directories"
 echo "-----------------------------------------------------------"
 
-# mkdir $HOME/.local
+mkdir -p $HOME/.local/share
 # mkdir $HOME/.config
 # mkdir $HOME/.cache
 mkdir $HOME/docs
