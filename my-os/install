@@ -99,7 +99,12 @@ echo "-----------------------------------------------------------"
 echo "Configuring packages"
 echo "-----------------------------------------------------------"
 
-git clone https://github.com/gaprop/cooless-rice.git
+git clone --separate-git-dir=$HOME/.local/share/dotfiles https://github.com/gaprop/dotfiles.git $HOME/myconf-tmp
+rm -r $HOME/myconf-tmp
+/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore *
+
+# Old way, will be removed
+# git clone https://github.com/gaprop/cooless-rice.git
 
 chsh -s /bin/zsh
 
@@ -145,6 +150,9 @@ mv "$HOME"/.pki/nssdb/key4.db "$HOME"/.local/share/pki/nssdb
 rm -r "$HOME"/.pki
 
 mkdir -p "$HOME"/.cache/zsh
+
+sudo touch /etc/zsh/zshenv
+echo "export ZDOTDIR=\"$XDG_CONFIG_HOME/zsh\"" | sudo tee -a  /etc/zsh/zshenv
 
 mkdir -p "$HOME"/.config/git
 mv "$HOME"/.gitconfig "$HOME"/.config/git/config
