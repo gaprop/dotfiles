@@ -151,9 +151,6 @@ rm -r "$HOME"/.pki
 
 mkdir -p "$HOME"/.cache/zsh
 
-sudo touch /etc/zsh/zshenv
-echo "export ZDOTDIR=\"$XDG_CONFIG_HOME/zsh\"" | sudo tee -a  /etc/zsh/zshenv
-
 mkdir -p "$HOME"/.config/git
 mv "$HOME"/.gitconfig "$HOME"/.config/git/config
 
