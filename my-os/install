@@ -19,18 +19,12 @@ pkglist="./pkglist"
 aurpkglist="./aur-pkglist"
 
 echo "-----------------------------------------------------------"
-echo "Creating basic directories"
+echo "Creating .local/share"
 echo "-----------------------------------------------------------"
 
 mkdir -p $HOME/.local/share
 # mkdir $HOME/.config
 # mkdir $HOME/.cache
-mkdir $HOME/docs
-mkdir $HOME/books
-mkdir $HOME/down
-mkdir $HOME/music
-mkdir $HOME/pics
-mkdir $HOME/vdeo
  
 echo "-----------------------------------------------------------"
 echo "Updating system and installing packages"
@@ -94,15 +88,17 @@ echo "-----------------------------------------------------------"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 rustup update
 
-
 echo "-----------------------------------------------------------"
 echo "Configuring packages"
 echo "-----------------------------------------------------------"
 
 git clone --separate-git-dir=$HOME/.local/share/dotfiles https://github.com/gaprop/dotfiles.git $HOME/myconf-tmp
 rm -r $HOME/myconf-tmp
-/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore *
+/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore .config
 
+/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore .local
+
+/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore .zprofile
 # Old way, will be removed
 # git clone https://github.com/gaprop/cooless-rice.git
 
@@ -158,7 +154,19 @@ mv "$HOME"/.gitconfig "$HOME"/.config/git/config
 # echo "Remeber to set up ssh, there are things you have to manually"
 # echo "-----------------------------------------------------------"
 echo "-----------------------------------------------------------"
+echo "Creating basic directories"
+echo "-----------------------------------------------------------"
+
+mkdir $HOME/docs
+mkdir $HOME/books
+mkdir $HOME/down
+mkdir $HOME/music
+mkdir $HOME/pics
+mkdir $HOME/vdeo
+
+echo "-----------------------------------------------------------"
 echo "Things you should remember"
 echo "-----------------------------------------------------------"
 echo "- Intall plugins in nvim with: :PlugInstall"
 echo "- Setup ssh with github"
+echo "- Change the dotfiles repo to use ssh instead"
