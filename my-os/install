@@ -94,23 +94,24 @@ echo "-----------------------------------------------------------"
 
 git clone --separate-git-dir=$HOME/.local/share/dotfiles https://github.com/gaprop/dotfiles.git $HOME/myconf-tmp
 rm -r $HOME/myconf-tmp
-/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore .config
 
-/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore .local
+/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore ../.config
 
-/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore .zprofile
+/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore ../.local
+
+/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME restore ../.zprofile
 # Old way, will be removed
 # git clone https://github.com/gaprop/cooless-rice.git
 
 chsh -s /bin/zsh
 
-echo "Copying config files to .config"
-cp -r cooless-rice/.config $HOME/
-echo "Copying binary files to .local/bin"
-cp -r cooless-rice/.local/bin $HOME/.local/
+# echo "Copying config files to .config"
+# cp -r cooless-rice/.config $HOME/
+# echo "Copying binary files to .local/bin"
+# cp -r cooless-rice/.local/bin $HOME/.local/
 
-echo "Setting up shell files"
-cp -r cooless-rice/.local/share/zsh "$HOME"/.local/share
+# echo "Setting up shell files"
+# cp -r cooless-rice/.local/share/zsh "$HOME"/.local/share
 
 echo "Creating xmonad directories"
 mkdir "$HOME"/.local/share/xmonad
