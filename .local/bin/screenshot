@@ -1,4 +1,6 @@
 #!/bin/sh
 
+# Gives the ability to take a screenshot of a section and pipes it into the clipboard
+
 maim -s -u | xclip -selection clipboard -t image/png -i
 notify-send -u low "Screen shot taken!"

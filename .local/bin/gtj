@@ -1,3 +1,5 @@
 #!/bin/sh
 
+# A script that goes to whatever project I am working on. The path changes depending on where the project is, however the script is mostly just a niche way for me to quicker get to the directory I want.
+
 cd "$HOME/Documents/porg/rust/a/i8080_emulator"

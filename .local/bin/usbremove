@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# Removes the device mounted to /mnt.
+
 device=$(lsblk -lp | grep " /mnt"  | awk '{print $1}')
 if [ "$device" = "" ];
 then notify-send "No device mounted to /mnt"

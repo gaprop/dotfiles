@@ -1,3 +1,5 @@
 #!/bin/sh
 
+# This script runs the sound program (see $HOME/.local/bin/sound) and prints its output to the notification daemon
+
 notify-send "$(sound "$1" "$2" | grep -m 1 "%" | awk '{print $5}' | sed 's/\[//g' | sed 's/\]//g')"

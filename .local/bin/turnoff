@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This script gives options to turnoff, reeboot or hibernate
+
 choices="Shutdown
 Reboot
 Hibernate"
@@ -9,5 +11,5 @@ chosen=$(echo "$choices" | dmenu -i)
 case "$chosen" in
   "Shutdown") loginctl poweroff ;;
   "Reboot") loginctl reboot ;;
-  # "Hibernate") systemctl hibernate ;;
+  "Hibernate") loginctl hibernate ;;
 esac

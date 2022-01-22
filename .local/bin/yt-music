@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# This program takes a song or album from youtube, downloads it and then tries to tag the song or album.
+
 downloads="$HOME/Downloads"
 
+# why did I write this in danish?
 # Den skal altså lige tagge hvilket track det også er. Men altså ellers er det alt der er brug for
 if echo "$1" | grep -q playlist; then
   youtube-dl -x -f m4a --add-metadata -o "$downloads/MUSIC-- %(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "$1"
