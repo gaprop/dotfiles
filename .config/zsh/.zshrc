@@ -43,8 +43,10 @@ export KEYTIMEOUT=1
 # Tab completion
 autoload -U compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' special-dirs true
 zmodload zsh/complist
 compinit
+_comp_options+=(globdots)
 
 bindkey -M menuselect '^H' vi-backward-char
 bindkey -M menuselect '^K' vi-up-line-or-history
