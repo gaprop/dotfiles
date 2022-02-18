@@ -8,18 +8,19 @@ SAVEHIST=1000
 stty stop undef # Disable ctrl-s to freeze terminal
 
 # My theme
-source "$HOME"/.local/share/zsh/plugins/git-prompt/git-prompt.zsh
-source "$HOME"/.local/share/zsh/plugins/git/git.zsh
-source "$HOME"/.local/share/zsh/plugins/prompt_info_functions/prompt_info_functions.zsh
-source "$HOME"/.local/share/zsh/plugins/virtualenv/virtualenv.zsh
-source "$HOME"/.local/share/zsh/plugins/themes-and-appearance/themes-and-appearance.zsh
+source "$XDG_DATA_HOME"/zsh/plugins/git-prompt/git-prompt.zsh
+source "$XDG_DATA_HOME"/zsh/plugins/git/git.zsh
+source "$XDG_DATA_HOME"/zsh/plugins/prompt_info_functions/prompt_info_functions.zsh
+source "$XDG_DATA_HOME"/zsh/plugins/virtualenv/virtualenv.zsh
+source "$XDG_DATA_HOME"/zsh/plugins/themes-and-appearance/themes-and-appearance.zsh
 
-source "$HOME"/.local/share/zsh/plugins/bira/bira.zsh-theme
+source "$XDG_DATA_HOME"/zsh/plugins/bira/bira.zsh-theme
 
 # Plugins
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/share/z/z.sh
-source "$HOME"/.local/share/zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
+source "$XDG_DATA_HOME"/zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
+
 
 alias config='/usr/bin/git --git-dir=$HOME/.local/share/dotfiles/ --work-tree=$HOME'
 
@@ -42,11 +43,26 @@ export KEYTIMEOUT=1
 
 # Tab completion
 autoload -U compinit
+
+zstyle ':completion:*:*:*:*:*' menu select
 zstyle ':completion:*' menu select
 zstyle ':completion:*' special-dirs true
 zmodload zsh/complist
+
+# case insensitive (all), partial-word and substring completion
+if [[ "$CASE_SENSITIVE" = true ]]; then
+  zstyle ':completion:*' matcher-list 'r:|=*' 'l:|=* r:|=*'
+else
+  if [[ "$HYPHEN_INSENSITIVE" = true ]]; then
+    zstyle ':completion:*' matcher-list 'm:{a-zA-Z-_}={A-Za-z_-}' 'r:|=*' 'l:|=* r:|=*'
+  else
+    zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+  fi
+fi
+unset CASE_SENSITIVE HYPHEN_INSENSITIVE
+
 compinit
-_comp_options+=(globdots)
+# _comp_options+=(globdots)
 
 bindkey -M menuselect '^H' vi-backward-char
 bindkey -M menuselect '^K' vi-up-line-or-history
