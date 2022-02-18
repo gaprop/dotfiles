@@ -62,7 +62,7 @@ fi
 unset CASE_SENSITIVE HYPHEN_INSENSITIVE
 
 compinit
-# _comp_options+=(globdots)
+_comp_options+=(globdots)
 
 bindkey -M menuselect '^H' vi-backward-char
 bindkey -M menuselect '^K' vi-up-line-or-history
