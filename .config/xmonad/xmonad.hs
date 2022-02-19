@@ -11,6 +11,7 @@ import Data.Monoid
 import XMonad.Hooks.EwmhDesktops  -- for some fullscreen events, also for xcomposite in obs.
 import XMonad.Hooks.Place
 import XMonad.Hooks.DynamicLog (dynamicLogWithPP, wrap, xmobarPP, xmobarColor, shorten, PP(..))
+import XMonad.Hooks.ManageHelpers
 
 -- Layouts
 import XMonad.Layout.ResizableTile
@@ -91,7 +92,7 @@ myWorkspaces = ["1<fn=1>\62601 </fn>", "2<fn=1>\63097 </fn>", "3<fn=1>\61441 </f
 -- Startup hooks
 myStartupHook :: X ()
 myStartupHook = do
-  spawnOnce "nitrogen --restore &"
+  spawnOnce "feh --bg-scale \"$XDG_DATA_HOME\"/wallpaper"
   spawnOnce "picom &"
   spawnOnce "unclutter &"
   spawnOnce "pa-applet &"
@@ -100,8 +101,10 @@ myStartupHook = do
 myManageHook :: XMonad.Query (Data.Monoid.Endo WindowSet)
 myManageHook = composeAll 
  [
+    -- isFullscreen                        --> doFullFloat
     className =? "Nm-connection-editor" --> doFloat
  ,  resource  =? "jn"                   --> placeHook myPlacement <+> doFloat
+ ,  resource  =? "calculator"           --> placeHook myPlacement <+> doFloat
  ]
 
 myPlacement = smart (0.5, 0.7)
@@ -125,9 +128,9 @@ myKeys =
   , ("M-<Space>", windows W.focusMaster)
     -- Programs
   , ("M1-<Space>", spawn "dunstctl close")
-  -- , ("<XF86AudioRaiseVolume>", spawn "sound up 5")
-  -- , ("<XF86AudioLowerVolume>", spawn "sound down 5")
-  -- , ("<XF86AudioMute>", spawn "sound toggle")
+  , ("<XF86AudioRaiseVolume>", spawn "sound up 5")
+  , ("<XF86AudioLowerVolume>", spawn "sound down 5")
+  , ("<XF86AudioMute>", spawn "sound toggle")
   , ("M-d", spawn "dmenu_run")
   , ("M-0", spawn "turnoff")
   , ("M-<Print>", spawn "screenshot")
@@ -137,14 +140,21 @@ myKeys =
   , ("M-S-n", spawn $ myEditor ++ " ~/.config/nvim/init.vim")
   , ("M-S-s", spawn $ myTerminal ++ " ncmpcpp")
   , ("M-S-d", spawn $ myTerminal ++ " -n jn" ++ " jn")
-  , ("M-S-p", spawn $ myTerminal ++ " gtj")
+  -- , ("M-S-p", spawn $ myTerminal ++ " gtj")
+  , ("M-S-p", spawn $ myTerminal ++ " -f \"Fira Code:size=18:antialias=true:autohint=true\" -n calculator" ++ " ghci")
   ]
     where 
       toggleGaps :: X ()
       toggleGaps = do
-        sendMessage ToggleGaps
+        sendMessage $ ToggleGap D
+        sendMessage $ ToggleGap R
+        sendMessage $ ToggleGap L
+        sendMessage $ modifyGap toggleTopGap U
         toggleScreenSpacingEnabled
         toggleWindowSpacingEnabled -- Removes spacing between windows (They overlap a tiny bit though)
+
+      toggleTopGap :: Int -> Int
+      toggleTopGap x = if x == 48 then 26 else 48
 
 -- Layouts
 mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
@@ -166,7 +176,7 @@ tall        = renamed [Replace "tall"]
 tabs        = renamed [Replace "tabs"]
               $ smartBorders
               $ gaps [(U, 48), (D, 2), (R, 8), (L, 8)]
-              $ gaps [(U, 0), (D, 16), (R, 16), (L, 16)]
+              -- $ gaps [(U, 0), (D, 16), (R, 16), (L, 16)]
               $ tabbed shrinkText myTabConfig
 myTabConfig = def { fontName              = "xft:URWGothic-Book:regular:pixelsize=11"
                     , activeColor         = myFocusColor
