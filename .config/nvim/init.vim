@@ -200,4 +200,9 @@ autocmd FileType tex inoremap ;m $$<Space><++><Esc>2T$i
 autocmd FileType tex inoremap ;M \begin{align*}<Enter><Enter><Esc>A\end{align*}<Enter><++><Esc>2kA<Tab>
 autocmd FileType tex inoremap ;fr \frac{}{<++>}<++><Esc>2T{i
 autocmd FileType tex inoremap ;sum \sum_{}^{<++>} <++><Esc>2T{i
+
+" Temporary 
+autocmd FileType tex inoremap ;inf \infrule{}{<++>}<++><Esc>2T{i
+autocmd FileType tex inoremap ;inp \inpend{}{<++>}<++><Esc>2T{i
+autocmd FileType tex inoremap ;oup \outpend{}{<++>}<++><Esc>2T{i
 "-----------------------------------------
