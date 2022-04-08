@@ -64,11 +64,15 @@ unset CASE_SENSITIVE HYPHEN_INSENSITIVE
 compinit
 _comp_options+=(globdots)
 
+# Vim key bindings for navigating autocomplete list and to delete characters properly 
 bindkey -M menuselect '^H' vi-backward-char
 bindkey -M menuselect '^K' vi-up-line-or-history
 bindkey -M menuselect '^L' vi-forward-char
 bindkey -M menuselect '^J' vi-down-line-or-history
 
+bindkey "^?" backward-delete-char
+
+# Switch between bar and line in vim mode
 function zle-keymap-select {
     if [[ ${KEYMAP} == vicmd ]] ||
        [[ $1 = 'block' ]]; then
