@@ -49,3 +49,5 @@ textlive-fontsextra
 biber
 zip
 unzip
+gdb
+nmap
