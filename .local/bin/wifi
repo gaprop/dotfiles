@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# FIXME: make the script work properly
+# This script handles wifi connection and hotspot.
+
 case "$1" in
   connect) 
     connections=$(nmcli dev wifi | grep -E "^ |\* " | awk '{print $2, $8}')

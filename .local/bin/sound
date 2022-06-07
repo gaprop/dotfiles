@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# This script gives the ability to turn the volume up, down or off. It can also return the volume
+
 NUM="${2:-5}"
 
 usage() {

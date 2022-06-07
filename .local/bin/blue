@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# This script handles bluetooth connection. You have to turn on bluetooth with: blue on, before you can connect.
+
 # Needs to figure out how to remove the mac address from the dmenu entry
 case "$1" in
   on)
