@@ -196,7 +196,7 @@ autocmd FileType tex inoremap ;tt \texttt{}<Space><++><Esc>T{i
 autocmd FileType tex inoremap ;ref \ref{}<Space><++><Esc>T{i
 
 " Latex Math
-autocmd FileType tex inoremap ;m $$<Space><++><Esc>2T$i
+autocmd FileType tex inoremap ;m $$<++><Esc>2T$i
 autocmd FileType tex inoremap ;M \begin{align*}<Enter><Enter><Esc>A\end{align*}<Enter><++><Esc>2kA<Tab>
 autocmd FileType tex inoremap ;fr \frac{}{<++>}<++><Esc>2T{i
 autocmd FileType tex inoremap ;sum \sum_{}^{<++>} <++><Esc>2T{i
