@@ -18,6 +18,9 @@ nnoremap g$ $
 nnoremap 0 g0
 nnoremap g0 0
 
+vnoremap < <gv
+vnoremap > >gv
+
 "-----------------------------------------
 
 
