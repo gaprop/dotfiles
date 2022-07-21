@@ -126,7 +126,7 @@ nnoremap <leader>l :tabnext<CR>
 set number
 
 "Line number is relative to the line your at
-set relativenumber
+" set relativenumber
 "-----------------------------------------
 
 "------------Indentation option------------
