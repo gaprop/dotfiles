@@ -176,10 +176,10 @@ let g:Tex_IgnoreLevel = 8
 
 "------------auto command options---------
 " Find find and replace for <++>
-autocmd FileType tex inoremap <C-j> <Esc>/<++><Enter>"_c4l
-autocmd FileType tex vnoremap <C-j> <Esc>/<++><Enter>"_c4l
-autocmd FileType tex map <C-j> <Esc>/<++><Enter>"_c4l
-autocmd FileType tex inoremap ;gui <++>
+inoremap <C-j> <Esc>/<++><Enter>"_c4l
+vnoremap <C-j> <Esc>/<++><Enter>"_c4l
+map <C-j> <Esc>/<++><Enter>"_c4l
+inoremap ;gui <++>
 
 " Latex
 autocmd FileType tex inoremap ;chap \chapter{}<Enter><Enter><++><Esc>2kf}i
