@@ -134,7 +134,7 @@ set number
 set expandtab
 
 "Makes tabulation with number of spaces
-set shiftwidth=2
+set shiftwidth=4
 
 " Add one space after comment
 let g:NERDSpaceDelims = 1

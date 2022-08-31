@@ -1,0 +1,31 @@
+#!/bin/zsh
+
+# This script accumulates numbers in a cahced files to add numbers on the run.
+
+file="$XDG_CACHE_HOME/acum_sum"
+
+if [ ! -e "$file" ]; 
+then echo "0" > "$file"
+fi
+
+case "$1" in
+    -r) 
+        echo "0" > "$file"
+        ;;
+    "")
+        cat "$file"
+        ;;
+    *) 
+        if echo "$1" | grep -Eq "^[0-9]*.?[0-9]+$"; 
+        then 
+            val=$(cat "$file")
+            # FIXME: This only works in zsh and is therefor not posix compliant
+            sum=$(("$1" + "$val"))
+            echo "$sum"
+            echo "$sum" > "$file"
+
+        else 
+            echo "Not a number"
+        fi
+        ;;
+esac
