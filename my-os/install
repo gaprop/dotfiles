@@ -158,12 +158,12 @@ echo "-----------------------------------------------------------"
 echo "Creating basic directories"
 echo "-----------------------------------------------------------"
 
-mkdir $HOME/docs
-mkdir $HOME/books
-mkdir $HOME/down
-mkdir $HOME/music
-mkdir $HOME/pics
-mkdir $HOME/vdeo
+mkdir $HOME/Documents
+mkdir $HOME/Books
+mkdir $HOME/Downloads
+mkdir $HOME/Music
+mkdir $HOME/Pictures
+mkdir $HOME/Vdeo
 
 echo "-----------------------------------------------------------"
 echo "Things you should remember"
