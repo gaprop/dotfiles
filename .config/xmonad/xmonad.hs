@@ -92,7 +92,7 @@ myWorkspaces = ["1<fn=1>\62601 </fn>", "2<fn=1>\63097 </fn>", "3<fn=1>\61441 </f
 -- Startup hooks
 myStartupHook :: X ()
 myStartupHook = do
-  spawnOnce "feh --bg-scale \"$XDG_DATA_HOME\"/wallpaper"
+  spawnOnce "feh --bg-scale --no-fehbg \"$XDG_DATA_HOME\"/wallpaper"
   spawnOnce "picom &"
   spawnOnce "unclutter &"
   spawnOnce "pa-applet &"
