@@ -4,6 +4,6 @@ priceType=$1
 url=$2
 
 case "$priceType" in
-    n) curl -s "$url" | grep Normalpris | awk '{print $2}' ;;
-    f) curl -s "$url" | grep Fordelspris | awk '{print $2}' ;;
+    n) curl -s "$url" | grep Normalpris | awk '{print $2}' | sed 's/,/\./' ;;
+    f) curl -s "$url" | grep Fordelspris | awk '{print $2}' | sed 's/,/\./' ;;
 esac
