@@ -25,6 +25,9 @@ export _Z_DATA="$XDG_DATA_HOME"/z # For z
 export XINITRC="${XDG_CONFIG_HOME:-$HOME/.config}/x11/xinitrc"
 export LESSHISTFILE="-"
 export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc" # For npm
+export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history" # For node
+export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority" # For Xauthority
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
       exec startx "$XINITRC"
@@ -32,6 +35,3 @@ fi
 
 # xorg changed the dpi, maybe this is temporary
 xrandr --dpi 96
- 
-# Increase monitor gamme
-#xgamma -quiet -gamma 1.3
