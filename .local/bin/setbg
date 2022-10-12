@@ -1,0 +1,11 @@
+#!/bin/sh
+# If the argument is a file, then sets that as the wallpaper. If the argument is a directory,
+# then it picks a random image and sets that as the wallpaper.
+
+wallpaper=~/.local/share/wallpaper
+
+[ -f "$1" ] && ln -srf "$1" "$wallpaper"
+
+[ -d "$1" ] && ln -srf "$(find "$1"/* -type l,f | shuf -n 1)" "$wallpaper"
+
+xwallpaper --zoom "$wallpaper"
