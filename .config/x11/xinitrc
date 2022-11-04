@@ -8,7 +8,11 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 
 # merge in defaults and keymaps
 
-$HOME/.local/bin/remaps
+if [ -f "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile" ]; then
+  . "${XDG_CONFIG_HOME:-$HOME/.config}/x11/xprofile"
+else
+  . "$HOME/.xprofile"
+fi
 
 if [ -f $sysresources ]; then
     xrdb -merge $sysresources
