@@ -129,6 +129,8 @@ hi! link markdownRule Comment
   hi Underlined guifg=#FF0000 guibg=NONE guisp=NONE gui=underline cterm=underline
   hi rubySymbol guifg=#FF0000 guibg=NONE guisp=NONE gui=NONE cterm=NONE
   hi rubyBoolean guifg=#FF0000 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi Directory guifg=#DADFF7 guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE
+  " hi Directory guifg=#ADA2CA guibg=NONE guisp=NONE gui=NONE ctermfg=NONE ctermbg=NONE
   " unlet s:t_Co
   finish
 endif
