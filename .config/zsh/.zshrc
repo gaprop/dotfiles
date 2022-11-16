@@ -29,7 +29,7 @@ alias ca=calcurse
 alias n=nvim
 alias nb=newsboat
 alias gtj=". gtj"
-alias grep=grep --color
+alias grep="grep --color"
 
 
 zat() {
