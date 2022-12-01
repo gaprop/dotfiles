@@ -134,6 +134,7 @@ set number
 set expandtab
 
 "Makes tabulation with number of spaces
+set tabstop=2
 set shiftwidth=2
 
 " Add one space after comment
