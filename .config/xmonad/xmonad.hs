@@ -104,6 +104,7 @@ myManageHook = composeAll
     className =? "Nm-connection-editor" --> doFloat
  ,  resource  =? "jn"                   --> placeHook myPlacement <+> doFloat
  ,  resource  =? "calculator"           --> placeHook myPlacement <+> doFloat
+ ,  className =? "discord"              --> doShift (myWorkspaces !! 3)
  ]
 
 myPlacement = smart (0.5, 0.7)
