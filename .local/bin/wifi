@@ -7,7 +7,7 @@ case "$1" in
   connect) 
     connections=$(nmcli -f SSID,BARS dev wifi | sed 1d)
     [ "$connections" = "" ] && exit 1
-    ssid=$(echo "$connections" | dmenu -i -l 10 -p "Connect to wifi" | awk 'sub(F $NF, x)')
+    ssid=$(echo "$connections" | dmenu -i -l 10 -p "Connect to wifi" | awk 'sub(F $NF, x)' | awk '{$1=$1};NF')
     [ "$ssid" = "" ] && exit 1
     password=$(echo "" | dmenu -i -p "Enter password")
     if [ "$password" = "" ]; then
