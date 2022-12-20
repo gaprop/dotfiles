@@ -15,6 +15,21 @@ case "$1" in
     "")
         cat "$file"
         ;;
+    -) 
+        val=$(cat "$file")
+        sum="$val"
+        while read -r line
+        do
+          if echo "$line" | grep -Eq "^[0-9]*.?[0-9]+$"; 
+          then
+            sum=$(("$line" + "$sum"))
+          else
+            echo "Not a number: $line" >&2
+            exit 1
+          fi
+        done
+        echo "$sum" > "$file"
+        ;;
     *) 
         if echo "$1" | grep -Eq "^[0-9]*.?[0-9]+$"; 
         then 
@@ -25,7 +40,8 @@ case "$1" in
             echo "$sum" > "$file"
 
         else 
-            echo "Not a number"
+            echo "Not a number" >&2
+            exit 1
         fi
         ;;
 esac
