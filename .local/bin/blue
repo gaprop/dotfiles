@@ -4,7 +4,9 @@
 
 con() {
     devices=$(bluetoothctl devices)
-    choice=$(echo "$devices" | awk '{$1=$2=""; print substr($0,3)}' | dmenu -p "Connect to device: ")
+    # choice=$(echo "$devices" | awk '{$1=$2=""; print substr($0,3)}' | dmenu -p "Connect to device: ")
+    # FIXME: Remove the mac address from the prompt
+    choice=$(echo "$devices" | awk '{$1=""; print $0}' | dmenu -p "Connect to device: ")
     mac=$(echo "$choice" | awk '{print $1}')
     bluetoothctl connect "$mac"
 }
