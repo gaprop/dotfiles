@@ -2,19 +2,22 @@
 
 # This script handles bluetooth connection. You have to turn on bluetooth with: blue on, before you can connect.
 
-# Needs to figure out how to remove the mac address from the dmenu entry
+con() {
+    devices=$(bluetoothctl devices)
+    choice=$(echo "$devices" | awk '{$1=$2=""; print substr($0,3)}' | dmenu -p "Connect to device: ")
+    mac=$(echo "$choice" | awk '{print $1}')
+    bluetoothctl connect "$mac"
+}
+
 case "$1" in
   on)
     bluetoothctl power on ;;
   off)
     bluetoothctl disconnect
     bluetoothctl power off ;;
-  connect)
-    devices=$(bluetoothctl devices)
-    choice=$(echo "$devices" | awk '{$1=""; print $0}' | dmenu -p "Connect to device: ")
-    mac=$(echo "$choice" | awk '{print $1}')
-    bluetoothctl connect "$mac"
-    ;;
+  connect) con ;;
+  c) con ;;
   disconnect) bluetoothctl disconnect ;;
+  d)          bluetoothctl disconnect ;;
 esac
 
