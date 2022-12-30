@@ -1,10 +1,8 @@
 #!/bin/sh
 
-# FIXME: make the script work properly
 # This script handles wifi connection and hotspot.
 
-case "$1" in
-  connect) 
+con() {
     connections=$(nmcli -f SSID,BARS dev wifi | sed 1d)
     [ "$connections" = "" ] && exit 1
     ssid=$(echo "$connections" | dmenu -i -l 10 -p "Connect to wifi" | awk 'sub(F $NF, x)' | awk '{$1=$1};NF')
@@ -15,16 +13,21 @@ case "$1" in
     else
       nmcli dev wifi connect "$ssid" password "$password"
     fi
-    ;;
-  hotspot)
+}
+
+hot() {
     name=$(echo "a" | dmenu -p "Enter a name for the hotspot")
     password=$(echo "yayyayyay" | dmenu -p "Enter a password")
     nmcli dev wifi hotspot ssid "$name" password "$password"
-    ;;
-  list)
-    nmcli dev wifi
-    ;;
-  diconnect)
-    nmcli dev disconnect wlo1
-    ;;
+}
+
+case "$1" in
+  connect) con;;
+  c)       con;;
+  hotspot) hot;;
+  h)       hot;;
+  list) nmcli dev wifi ;;
+  l)    nmcli dev wifi ;;
+  diconnect) nmcli dev disconnect wlo1 ;;
+  d)         nmcli dev disconnect wlo1 ;;
 esac
