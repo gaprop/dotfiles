@@ -37,7 +37,7 @@ import XMonad.Util.Run (spawnPipe)
 -- main
 main :: IO ()
 main = do
-  xmproc <- spawnPipe "xmobar $HOME/.config/xmobar/xmobarrc"
+  xmproc <- spawnPipe "xmobar $HOME/.config/xmobar/xmobar.hs"
   xmonad $ ewmh def
     { startupHook        = myStartupHook
     , layoutHook         = myLayoutHook
