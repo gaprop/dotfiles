@@ -2,3 +2,7 @@
 
 setbg ~/.local/share/wallpapers &
 remaps &
+xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!
+
+# Wait for xrdb to start running before starting the wm
+[-n "$xrdbpid"] && wait "$xrdbpid"
