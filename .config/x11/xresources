@@ -23,6 +23,8 @@
 *fg: #8098b1
 *bg: #090611
 
+xmobar: $XDG_CONFIG_HOME/xmobar/xmobar.hs
+
 !! The colors used in an editor
 
 ! light mode
@@ -48,3 +50,5 @@
 ! *reverseCursorr: #555555
 ! *fg: #8098b1
 ! *bg: #ffffff
+
+! xmobar: $XDG_CONFIG_HOME/xmobar/light-xmobar.hs

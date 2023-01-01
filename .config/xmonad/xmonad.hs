@@ -39,7 +39,8 @@ import XProp
 -- main
 main :: IO ()
 main = do
-  xmproc <- spawnPipe "xmobar $HOME/.config/xmobar/xmobar.hs"
+  xmobarPath <- getFromXres "xmobar"
+  xmproc <- spawnPipe $ "xmobar " ++ xmobarPath
   xmonad $ ewmh def
     { startupHook        = myStartupHook
     , layoutHook         = myLayoutHook
