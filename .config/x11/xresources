@@ -1,59 +1,50 @@
-mode: night
-bg: #090611
-fg: #724372
-border: #724372 
-accent: #ffffff
-sec: #724372
-alert: #c9af82
-font: Fira Code
+! dark mode
+!! The basic colors to a terminal
+*color1: #2d1d34
+*color2: #724372
+*color3: #ffffff
+*color4: #b18b77
+*color5: #c9af82
+*color6: #574dae
+*color7: #947DC2
+*color8: #e37933
 
-Xft.dpi:       96
-Xft.antialias: true
-Xft.hinting:   true
-Xft.rgba:      rgb
-Xft.autohint:  false
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
+*color9: #2d1d34
+*color10: #724372
+*color11: #ffffff
+*color12: #b18b77
+*color13: #c9af82
+*color14: #574dae
+*color15: #947DC2
+*color16: #e37933
 
-*background:                      #000000
-*foreground:                      #fefdd7
-*fading:                          8
-*fadeColor:                       black
-*cursorColor:                     #1ABB9B
-*pointerColorBackground:          #2B2C2B
-*pointerColorForeground:          #16A085
+*cursor: #ffffff
+*reverseCursorr: #555555
+*fg: #8098b1
+*bg: #090611
 
-*color0: #2d1d34
-*color8: #2d1d34
+!! The colors used in an editor
 
-!#: red
-*color1: #311D31
-*color9: #311D31
+! light mode
+! *color1: #2d1d34
+! *color2: #724372
+! *color3: #090611
+! *color4: #b18b77
+! *color5: #c9af82
+! *color6: #574dae
+! *color7: #947DC2
+! *color8: #e37933
 
-!#: green
-*color2: #ffffff
-*color10: #ffffff
+! *color9: #2d1d34
+! *color10: #724372
+! *color11: #090611
+! *color12: #b18b77
+! *color13: #c9af82
+! *color14: #574dae
+! *color15: #947DC2
+! *color16: #e37933
 
-!#: yello: 
-*color3: #947DC2
-*color11: #947DC2
-
-!#: blue
-*color4: #c9af82
-*color12: #c9af82
-
-!#: magenta
-*color5: #574dae
-*color13: #574dae
-
-!#: cyan
-*color6: #8098b1
-*color14: #8098b1
-
-!#: white: 
-*color7: #e37933
-*color15: #e37933
-
-Xcursor.theme: xcursor-breeze
-Xcursor.size:                     0
-
+! *cursor: #ffffff
+! *reverseCursorr: #555555
+! *fg: #8098b1
+! *bg: #ffffff

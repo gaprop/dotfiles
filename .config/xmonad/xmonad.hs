@@ -34,6 +34,8 @@ import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run (spawnPipe)
 
+import XProp
+
 -- main
 main :: IO ()
 main = do
@@ -53,7 +55,7 @@ main = do
         -- The xmobar to output
         ppOutput        = \x -> hPutStrLn xmproc x
         -- The active workspace. A space is added between the icon and the number
-      , ppCurrent       = xmobarColor "#c9af82" "" . (\(x, y) -> x ++ " " ++ y) . splitAt 1
+      , ppCurrent       = xmobarColor (xProp "*color5") "" . (\(x, y) -> x ++ " " ++ y) . splitAt 1
         -- The order of the bar. Only the workspaces are shown
       , ppOrder         = \(ws:l:t:ex) -> [ws]
       }
@@ -80,10 +82,10 @@ myEditor :: String
 myEditor = myTerminal ++ " nvim"
 
 myNormColor :: String
-myNormColor = "#090611"
+myNormColor = xProp "*bg"
 
 myFocusColor :: String
-myFocusColor = "#ffffff"
+myFocusColor = xProp "*color3"
 
 myWorkspaces :: [String]
 myWorkspaces = ["1<fn=1>\62601 </fn>", "2<fn=1>\63097 </fn>", "3<fn=1>\61441 </fn>"] ++ map format [4..9]
@@ -184,7 +186,7 @@ myTabConfig = def { fontName              = "xft:URWGothic-Book:regular:pixelsiz
                     , activeBorderColor   = myFocusColor
                     , inactiveBorderColor = myNormColor
                     , activeTextColor     = myNormColor
-                    , inactiveTextColor   = "#724372"
+                    , inactiveTextColor   = xProp "*color2"
                   }
 
 myLayoutHook = mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
