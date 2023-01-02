@@ -1,22 +1,22 @@
 ! dark mode
 !! The basic colors to a terminal
-*color1: #2d1d34
-*color2: #724372
-*color3: #ffffff
-*color4: #b18b77
-*color5: #c9af82
-*color6: #574dae
-*color7: #947DC2
-*color8: #e37933
+*color0: #2d1d34
+*color1: #724372
+*color2: #ffffff
+*color3: #b18b77
+*color4: #c9af82
+*color5: #574dae
+*color6: #947DC2
+*color7: #e37933
 
-*color9: #2d1d34
-*color10: #724372
-*color11: #ffffff
-*color12: #b18b77
-*color13: #c9af82
-*color14: #574dae
-*color15: #947DC2
-*color16: #e37933
+*color8: #2d1d34
+*color9: #724372
+*color10: #ffffff
+*color11: #b18b77
+*color12: #c9af82
+*color13: #574dae
+*color14: #947DC2
+*color15: #e37933
 
 *cursor: #ffffff
 *reverseCursorr: #555555
@@ -28,23 +28,23 @@ xmobar: $XDG_CONFIG_HOME/xmobar/xmobar.hs
 !! The colors used in an editor
 
 ! light mode
-! *color1: #2d1d34
-! *color2: #724372
-! *color3: #090611
-! *color4: #b18b77
-! *color5: #c9af82
-! *color6: #574dae
-! *color7: #947DC2
-! *color8: #e37933
+! *color0: #2d1d34
+! *color1: #724372
+! *color2: #090611
+! *color3: #b18b77
+! *color4: #c9af82
+! *color5: #574dae
+! *color6: #947DC2
+! *color7: #e37933
 
-! *color9: #2d1d34
-! *color10: #724372
-! *color11: #090611
-! *color12: #b18b77
-! *color13: #c9af82
-! *color14: #574dae
-! *color15: #947DC2
-! *color16: #e37933
+! *color8: #2d1d34
+! *color9: #724372
+! *color10: #090611
+! *color11: #b18b77
+! *color12: #c9af82
+! *color13: #574dae
+! *color14: #947DC2
+! *color15: #e37933
 
 ! *cursor: #ffffff
 ! *reverseCursorr: #555555
