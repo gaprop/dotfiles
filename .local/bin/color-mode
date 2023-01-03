@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# A script for chaning colors to either light mode or dark mode
+
+file="$XDG_CONFIG_HOME"/x11/xresources
+
+changeColor() {
+  sed -e "/\/\*!$2\*\//s/^\*/!\*/" \
+      -e "/\/\*!$2\*\//s/^xmobar/!xmobar/" \
+      -e "/\/\*!$1\*\//s/^!\*/\*/" \
+      -e "/\/\*!$1\*\//s/^!xmobar/xmobar/" \
+      -i "$file"
+
+  xrdb "$file"
+  xmonad --recompile
+  xmonad --restart
+  update-vim-colors
+}
+
+case "$1" in
+  dark) changeColor DARK_MODE LIGHT_MODE ;;
+  light) changeColor LIGHT_MODE DARK_MODE ;;
+  *) echo "Incorrect argument" ;;
+esac
