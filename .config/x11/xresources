@@ -23,7 +23,10 @@
 *fg: #8098b1 /*!DARK_MODE*/
 *bg: #090611 /*!DARK_MODE*/
 
+*mode: dark /*!DARK_MODE*/
+
 xmobar: $XDG_CONFIG_HOME/xmobar/xmobar.hs /*!DARK_MODE*/
+
 
 !! The colors used in an editor
 
@@ -46,9 +49,11 @@ xmobar: $XDG_CONFIG_HOME/xmobar/xmobar.hs /*!DARK_MODE*/
 !*color14: #947DC2 /*!LIGHT_MODE*/
 !*color15: #e37933 /*!LIGHT_MODE*/
 
-!*cursor: #ffffff /*!LIGHT_MODE*/
+!*cursor: #090611 /*!LIGHT_MODE*/
 !*reverseCursor: #555555 /*!LIGHT_MODE*/
 !*fg: #8098b1 /*!LIGHT_MODE*/
 !*bg: #ffffff /*!LIGHT_MODE*/
+
+!*mode: light /*!LIGHT_MODE*/
 
 !xmobar: $XDG_CONFIG_HOME/xmobar/light-xmobar.hs /*!LIGHT_MODE*/

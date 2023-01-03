@@ -56,7 +56,7 @@ main = do
         -- The xmobar to output
         ppOutput        = \x -> hPutStrLn xmproc x
         -- The active workspace. A space is added between the icon and the number
-      , ppCurrent       = xmobarColor (xProp "*color5") "" . (\(x, y) -> x ++ " " ++ y) . splitAt 1
+      , ppCurrent       = xmobarColor (xProp "*color4") "" . (\(x, y) -> x ++ " " ++ y) . splitAt 1
         -- The order of the bar. Only the workspaces are shown
       , ppOrder         = \(ws:l:t:ex) -> [ws]
       }
@@ -86,7 +86,10 @@ myNormColor :: String
 myNormColor = xProp "*bg"
 
 myFocusColor :: String
-myFocusColor = xProp "*color3"
+myFocusColor = xProp "*color2"
+
+colorMode :: String
+colorMode = xProp "*mode"
 
 myWorkspaces :: [String]
 myWorkspaces = ["1<fn=1>\62601 </fn>", "2<fn=1>\63097 </fn>", "3<fn=1>\61441 </fn>"] ++ map format [4..9]
@@ -145,6 +148,7 @@ myKeys =
   , ("M-S-d", spawn $ myTerminal ++ " -n jn" ++ " jn")
   -- , ("M-S-p", spawn $ myTerminal ++ " gtj")
   , ("M-S-p", spawn $ myTerminal ++ " -f \"Fira Code:size=18:antialias=true:autohint=true\" -n calculator" ++ " ghci")
+  , ("M-S-i", spawn $ "color-mode " ++ changeMode colorMode)
   ]
     where 
       toggleGaps :: X ()
@@ -158,6 +162,10 @@ myKeys =
 
       toggleTopGap :: Int -> Int
       toggleTopGap x = if x == 48 then 26 else 48
+
+      changeMode :: String -> String
+      changeMode "dark" = "light"
+      changeMode c      = "dark"
 
 -- Layouts
 mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
