@@ -1,0 +1,48 @@
+#!/bin/sh
+
+# This script updates the colors of the vim color file named mycolor.vim.template with the values in the xresources file
+
+# FIXME: Make return in case of error
+
+file="$XDG_CONFIG_HOME"/nvim/colors/mycolor.vim.template
+output="$XDG_CONFIG_HOME"/nvim/colors/mycolor.vim
+
+color0=$(xrdb -get "*color0")
+color1=$(xrdb -get "*color1")
+color2=$(xrdb -get "*color2")
+color3=$(xrdb -get "*color3")
+color4=$(xrdb -get "*color4")
+color5=$(xrdb -get "*color5")
+color6=$(xrdb -get "*color6")
+color7=$(xrdb -get "*color7")
+color8=$(xrdb -get "*color8")
+color9=$(xrdb -get "*color9")
+color10=$(xrdb -get "*color10")
+color11=$(xrdb -get "*color11")
+color12=$(xrdb -get "*color12")
+color13=$(xrdb -get "*color13")
+color14=$(xrdb -get "*color14")
+color15=$(xrdb -get "*color15")
+
+foreground=$(xrdb -get "*fg")
+background=$(xrdb -get "*bg")
+
+sed -e "s/<+\*color0+>/$color0/g" \
+    -e "s/<+\*color1+>/$color1/g" \
+    -e "s/<+\*color2+>/$color2/g" \
+    -e "s/<+\*color3+>/$color3/g" \
+    -e "s/<+\*color4+>/$color4/g" \
+    -e "s/<+\*color5+>/$color5/g" \
+    -e "s/<+\*color6+>/$color6/g" \
+    -e "s/<+\*color7+>/$color7/g" \
+    -e "s/<+\*color8+>/$color8/g" \
+    -e "s/<+\*color9+>/$color9/g" \
+    -e "s/<+\*color10+>/$color10/g" \
+    -e "s/<+\*color11+>/$color11/g" \
+    -e "s/<+\*color12+>/$color12/g" \
+    -e "s/<+\*color13+>/$color13/g" \
+    -e "s/<+\*color14+>/$color14/g" \
+    -e "s/<+\*color15+>/$color15/g" \
+    -e "s/<+\*fg+>/$foreground/g" \
+    -e "s/<+\*bg+>/$background/g" \
+    "$file" > "$output"
