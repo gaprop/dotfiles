@@ -1,0 +1,25 @@
+#!/bin/sh
+
+data=$(curl -s "http://152.115.131.170/Status.asp" \
+  | grep "<TD\|</TR" \
+  | tail -n +5 \
+  | sed -e 's/<[^>]*>//g' \
+        -e 's/\s*//' \
+        -e 's/&nbsp;//g' \
+        -e 's/&#8226;//g' \
+        -e 's/ &#10095;/-->/' \
+        -e 's///' \
+        -e 's/,/./g' \
+  | head -n -2)
+
+# FIXME: This is not that pretty
+ret=$(echo "$data" | while read -r line
+do
+  if [ -n "$line" ]; then 
+    echo "$line," | tr -d '\n'
+  else 
+    echo ''
+  fi
+done)
+
+echo "$ret" | sed -e 's/,$//' -e '/^$/d' -e 's/-$/-,/'
