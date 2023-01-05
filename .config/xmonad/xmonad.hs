@@ -195,7 +195,7 @@ myTabConfig = def { fontName              = "xft:URWGothic-Book:regular:pixelsiz
                     , activeBorderColor   = myFocusColor
                     , inactiveBorderColor = myNormColor
                     , activeTextColor     = myNormColor
-                    , inactiveTextColor   = xProp "*color2"
+                    , inactiveTextColor   = xProp "*color1"
                   }
 
 myLayoutHook = mkToggle (NBFULL ?? NOBORDERS ?? EOT) myDefaultLayout
