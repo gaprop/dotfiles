@@ -2,4 +2,4 @@
 
 # This program updates my website. It is not really usefull for anyone
 
-rsync -vrP --delete-after ~/Documents/website/food/ root@kildemand.com:/var/www/food
+rsync -vrP --delete-after "$HOME"/.local/src/website/food/ root@anderskildemand.dk:/var/www/food
