@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# This script sends a file to a directory on my own server, where the data is pulled to some other local storage.
+
+scp "$1" root@anderskildemand.dk:sync_files
