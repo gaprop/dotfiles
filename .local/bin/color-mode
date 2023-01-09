@@ -12,7 +12,6 @@ changeColor() {
       -i "$file"
 
   xrdb "$file"
-  xmonad --recompile
   xmonad --restart
   update-vim-colors
 }
