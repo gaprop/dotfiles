@@ -190,7 +190,7 @@ autocmd FileType tex inoremap ;sssec \subsubsection{}<Enter><Enter><++><Esc>2kf}
 autocmd FileType tex inoremap ;ol \begin{enumerate}<Enter><Enter><Esc>A\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Space>
 autocmd FileType tex inoremap ;ul \begin{itemize}<Enter><Enter><Esc>A\end{itemize}<Enter><Enter><++><Esc>3kA\item<Space>
 autocmd FileType tex inoremap ;li <Enter>\item<Space>
-autocmd FileType tex inoremap ;beg \begin{D}<Enter><++><Enter><Esc>A\end{D}<Enter><Enter><++><Esc>4kV2j
+autocmd FileType tex inoremap ;beg \begin{D}<Enter><++><Enter><Esc>A\end{D}<Enter><Enter><++><Esc>2kV2k:s/D/
 autocmd FileType tex inoremap ;fig \begin{figure}<Enter><Enter>\caption{<++>}<Enter>\label{<++>}<Enter><Esc>A\end{figure}<Enter><Enter><++><Esc>5kA<Tab>
 autocmd FileType tex inoremap ;tab \begin{table}[]<Enter>\begin{tabular}<Enter>\hline<Enter><++><Space>\\<Space>\hline<Enter><Backspace>\end{tabular}<Enter><Esc>A\end{table}<Enter><Enter><++><Esc>6kA{}<Esc>i
 autocmd FileType tex inoremap ;em \emph{}<++><Esc>T{i
