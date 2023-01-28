@@ -1,6 +1,7 @@
 #!/bin/sh
 
 setbg ~/.local/share/wallpapers &
+# setbg ~/.local/share/wallpapers/wall1 &
 remaps &
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!
 
