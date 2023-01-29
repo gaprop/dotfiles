@@ -22,4 +22,4 @@ do
   fi
 done)
 
-echo "$ret" | sed -e 's/,$//' -e '/^$/d' -e 's/-$/-,/'
+echo "$ret" | sed -e 's/,$//' -e '/^$/d' -e 's/-$/-,/' | /home/anders/.local/src/tablepp/target/release/tablepp -c 2,Fb -c 0,Fy -c 3,Fr
