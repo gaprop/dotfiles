@@ -131,11 +131,11 @@ set number
 
 "------------Indentation option------------
 "Allows to change tab to whitespace
-set expandtab
+set expandtab "!MOD:VIMTAB
 
 "Makes tabulation with number of spaces
-set tabstop=2
-set shiftwidth=2
+set tabstop=2 "!MOD:VIMTAB
+set shiftwidth=2 "!MOD:VIMTAB
 
 " Add one space after comment
 let g:NERDSpaceDelims = 1
