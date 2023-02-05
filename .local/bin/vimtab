@@ -27,14 +27,14 @@ space 4
 tab 2" | dmenu -p "Tabs or spaces: ")
 
 case "$choice" in
-  "space 2") notify-send "Changed to 2 spaces" ;;
+  "space 2") notify-send "Changed vim config" "Changed to 2 spaces" ;;
   "space 4")
     set_space 4
-    notify-send "Changed to 4 spaces"
+    notify-send "Changed vim config" "Changed to 4 spaces"
     ;;
   "tab 2") 
     set_tab 2
-    notify-send "Changed to tabs that are 
+    notify-send "Changed vim config" "Changed to tabs that are 
     2 characters long"
     ;;
 esac
