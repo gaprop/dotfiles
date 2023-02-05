@@ -149,6 +149,7 @@ myKeys =
   -- , ("M-S-p", spawn $ myTerminal ++ " gtj")
   , ("M-S-p", spawn $ myTerminal ++ " -f \"Fira Code:size=18:antialias=true:autohint=true\" -n calculator" ++ " ghci")
   , ("M-S-i", spawn $ "color-mode " ++ changeMode colorMode)
+  , ("M-S-t", spawn $ "vimtab")
   ]
     where 
       toggleGaps :: X ()
