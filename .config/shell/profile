@@ -28,6 +28,7 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME:-$HOME/.config}/npm/npmrc" # For npm
 export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history" # For node
 export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority" # For Xauthority
+export TEXMFVAR="${XDG_CACHE_HOME:-$HOME/.cache}/texlive/texmf-var"
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
       exec startx "$XINITRC"
