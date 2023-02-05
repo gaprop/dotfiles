@@ -45,7 +45,7 @@ Plug 'scrooloose/nerdcommenter'
 "File managing and exploration
 Plug 'scrooloose/nerdtree'
 
-" Wut da fuck is this?
+" What is this?
 Plug 'rbgrouleff/bclose.vim'
 
 "Highlight for yank
