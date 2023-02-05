@@ -1,0 +1,40 @@
+#!/bin/sh
+
+file="$XDG_CONFIG_HOME"/nvim/init.vim
+
+set_space() {
+  sed -e "/!MOD:VIMTAB/s/\"set expandtab/set expandtab/" \
+      -e "/!MOD:VIMTAB/s/set tabstop=[0-9]\+/set tabstop=$1/" \
+      -e "/!MOD:VIMTAB/s/set shiftwidth=[0-9]\+/set shiftwidth=$1/" \
+      -i "$file"
+}
+
+set_tab() {
+  sed -e "/!MOD:VIMTAB/s/^set expandtab/\"set expandtab/" \
+      -e "/!MOD:VIMTAB/s/set tabstop=[0-9]\+/set tabstop=$1/" \
+      -e "/!MOD:VIMTAB/s/set shiftwidth=[0-9]\+/set shiftwidth=$1/" \
+      -i "$file"
+}
+
+set_default() {
+  set_space 2
+}
+
+set_default
+
+choice=$(echo "space 2
+space 4
+tab 2" | dmenu -p "Tabs or spaces: ")
+
+case "$choice" in
+  "space 2") notify-send "Changed to 2 spaces" ;;
+  "space 4")
+    set_space 4
+    notify-send "Changed to 4 spaces"
+    ;;
+  "tab 2") 
+    set_tab 2
+    notify-send "Changed to tabs that are 
+    2 characters long"
+    ;;
+esac
