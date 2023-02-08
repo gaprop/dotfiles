@@ -134,8 +134,8 @@ set number
 set expandtab "!MOD:VIMTAB
 
 "Makes tabulation with number of spaces
-set tabstop=2 "!MOD:VIMTAB
-set shiftwidth=2 "!MOD:VIMTAB
+set tabstop=4 "!MOD:VIMTAB
+set shiftwidth=4 "!MOD:VIMTAB
 
 " Add one space after comment
 let g:NERDSpaceDelims = 1
@@ -175,12 +175,15 @@ let g:Tex_IgnoredWarnings =
 let g:Tex_IgnoreLevel = 8
 "-----------------------------------------
 
-"------------auto command options---------
+"------------Hotkeys options---------
 " Find find and replace for <++>
 inoremap <C-j> <Esc>/<++><Enter>"_c4l
 vnoremap <C-j> <Esc>/<++><Enter>"_c4l
 map <C-j> <Esc>/<++><Enter>"_c4l
 inoremap ;gui <++>
+
+" Reload init.vim
+nnoremap <leader>R :so $NVIMRC
 
 " Latex
 autocmd FileType tex inoremap ;chap \chapter{}<Enter><Enter><++><Esc>2kf}i
