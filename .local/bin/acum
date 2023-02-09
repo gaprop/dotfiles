@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-# This script accumulates numbers in a cahced files to add numbers on the run.
+# This script accumulates numbers in a cahced file to add numbers on the run.
 
 file="$XDG_CACHE_HOME/acum_sum"
 
