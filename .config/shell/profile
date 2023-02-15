@@ -11,7 +11,6 @@ export READER="zathura"
 export NVIMRC="${XDG_CONFIG_HOME:-$HOME/.config}/nvim/init.vim"
 
 # "Add .local/bin to path"
-# export PATH="$PATH:$(du "$HOME/.local/bin" | cut -f2 | paste -sd ':'):/home/anders/.local/share/cargo/bin" # Isn't this just an autistic way of saying I want .local/bin in my path
 export PATH="$PATH:$HOME/.local/bin:$HOME/.local/share/cargo/bin"
 
 # /~ Clean up
