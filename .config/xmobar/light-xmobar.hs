@@ -1,5 +1,8 @@
-Config { font = "xft:Iosevka:styke=Regular:pixelsize=15;2:antialias=true:hinting=true"
-       , additionalFonts = [ "xft:TerminessTTF Nerd Font:style=Regular:pixelsize=15;2" ]
+Config { 
+         -- font = "xft:Iosevka:styke=Regular:pixelsize=15;2:antialias=true:hinting=true"
+         font = "Iosevka Regular 15;2 "
+       -- , additionalFonts = [ "xft:TerminessTTF Nerd Font:style=Regular:pixelsize=15;2" ]
+       , additionalFonts = [ "TerminessTTF Nerd Font Regular 12" ]
        -- , bgColor = "#090611"
        , bgColor = "#ffffff"
        , fgColor = "#090611"
