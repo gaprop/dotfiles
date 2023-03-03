@@ -42,8 +42,9 @@ main = do
   xmobarPath <- getFromXres "xmobar"
   xmproc <- spawnPipe $ "xmobar " ++ xmobarPath
   xmonad $ ewmh def
-    { startupHook        = myStartupHook
-    , layoutHook         = myLayoutHook
+    { 
+      -- startupHook        = myStartupHook
+      layoutHook         = myLayoutHook
     , manageHook         = myManageHook
     , terminal           = myTerminal
     , modMask            = myModMask
@@ -94,13 +95,6 @@ colorMode = xProp "*mode"
 myWorkspaces :: [String]
 myWorkspaces = ["1<fn=1>\62601 </fn>", "2<fn=1>\63097 </fn>", "3<fn=1>\61441 </fn>"] ++ map format [4..9]
   where format = (++ "<fn=1>\61713 </fn>") . show
-
--- Startup hooks
-myStartupHook :: X ()
-myStartupHook = do
-  spawnOnce "picom &"
-  spawnOnce "unclutter &"
-  spawnOnce "pa-applet &"
 
 -- Manage hooks (or rules for certain windows)
 myManageHook :: XMonad.Query (Data.Monoid.Endo WindowSet)

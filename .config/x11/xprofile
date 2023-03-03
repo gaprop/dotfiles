@@ -2,8 +2,15 @@
 
 setbg ~/.local/share/wallpapers &
 # setbg ~/.local/share/wallpapers/wall1 &
-remaps &
+# remaps &
 xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!
+
+autostart="mpd pulseaudio picom unclutter remaps"
+
+for program in $autostart; do
+    pidof -s "$program" || "$program" &
+done >/dev/null 2>&1
+
 
 # Wait for xrdb to start running before starting the wm
 [-n "$xrdbpid"] && wait "$xrdbpid"
