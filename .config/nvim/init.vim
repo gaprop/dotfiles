@@ -94,6 +94,10 @@ let g:vimtex_compiler_progname = 'nvr'
 
 let g:haskell_classic_highlighting = 1
 
+" For fixing json highlighting comments as an error
+autocmd FileType json syntax match Comment +\/\/.\+$+
+autocmd FileType json syntax match Comment +\/\*.\+$+
+
 " Toggle search highlighting 
 set hlsearch!
 nnoremap <leader>n :set hlsearch!<CR>
