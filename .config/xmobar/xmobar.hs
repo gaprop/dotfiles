@@ -48,11 +48,12 @@ Config {
                                    "-o", "<fn=1>  </fn><left>%",
                                    "-O", "<fc=#c9af82><fn=1>  </fn><left>%</fc>"
                                   ] 20
+                    , Run Uptime ["-t", "<fn=1> </fn><hours>h <minutes>m"] 20
                       -- Check for updates
                     , Run Com "/home/anders/.config/xmobar/scripts/updates" [] "updates" 36000
                     , Run UnsafeStdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%UnsafeStdinReader% %battery% %updates% } %date% { %wi% %dynnetwork% %disku%  %cpu%   %memory%   %thermal0% %alsa:default:Master%"
+       , template = "%UnsafeStdinReader% %battery% %updates% } %date% { %uptime% | %wi% | %dynnetwork% | %disku% | %cpu% | %memory% | %thermal0% | %alsa:default:Master%"
        }
