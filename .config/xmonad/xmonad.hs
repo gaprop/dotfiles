@@ -93,7 +93,7 @@ colorMode :: String
 colorMode = xProp "*mode"
 
 myWorkspaces :: [String]
-myWorkspaces = ["1<fn=1>\62601 </fn>", "2<fn=1>\63097 </fn>", "3<fn=1>\61441 </fn>"] ++ map format [4..9]
+myWorkspaces = ["1<fn=1>\62601 </fn>", "2<fn=1>\62160 </fn>", "3<fn=1>\61441 </fn>"] ++ map format [4..9]
   where format = (++ "<fn=1>\61713 </fn>") . show
 
 -- Manage hooks (or rules for certain windows)
