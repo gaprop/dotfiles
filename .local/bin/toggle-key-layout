@@ -1,0 +1,16 @@
+#!/bin/sh
+
+layout=$(cat "$XDG_CACHE_HOME"/key-layout || cat "$XDG_DATA_HOME"/key-layout)
+
+case "$layout" in
+    dk) 
+        setxkbmap us 
+        echo "us" > "$XDG_CACHE_HOME"/key-layout
+        ;;
+    us) setxkbmap dk 
+        xmodmap "$XDG_CONFIG_HOME"/xmodmap/Xmodmap
+        echo "dk" > "$XDG_CACHE_HOME"/key-layout
+        ;;
+esac
+
+xset r rate 300 50

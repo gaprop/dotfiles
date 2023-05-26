@@ -121,6 +121,7 @@ myKeys =
   , ("M-<Tab>", sendMessage NextLayout)
   , ("M-f", toggleGaps)
   , ("M-S-f", sendMessage $ Toggle NBFULL)
+  , ("M-S-C-M1-l", spawn $ "toggle-key-layout")
     -- Window navigation
   , ("M-j", windows W.focusDown)
   , ("M-k", windows W.focusUp)
