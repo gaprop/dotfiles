@@ -123,6 +123,9 @@ let g:AutoPairsCenterLine = 0
 nnoremap <leader>h :tabprevious<CR>
 nnoremap <leader>l :tabnext<CR>
 
+nnoremap <leader>< :tabm -1<CR>
+nnoremap <leader>> :tabm +1<CR>
+
 "-----------------------------------------
 
 "------------Interface options------------
