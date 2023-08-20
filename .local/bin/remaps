@@ -3,5 +3,5 @@
 # This script remaps keys and other minor settings.
 
 xset r rate 300 50
-setxkbmap "$XDG_DATA_HOME"/key-layout
-# xmodmap "$XDG_CONFIG_HOME"/xmodmap/Xmodmap
+setxkbmap $(cat "$XDG_DATA_HOME"/key-layout)
+xmodmap "$XDG_CONFIG_HOME"/xmodmap/Xmodmap
