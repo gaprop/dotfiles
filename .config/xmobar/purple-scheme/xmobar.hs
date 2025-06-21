@@ -3,8 +3,8 @@ Config {
          font = "Iosevka Regular 15;2 "
        -- , additionalFonts = [ "xft:TerminessTTF Nerd Font:style=Regular:pixelsize=15;2" ]
        , additionalFonts = [ "TerminessTTF Nerd Font Regular 12" ]
-       , bgColor = "#140000"
-       , fgColor = "#FDF0D5"
+       , bgColor = "#090611"
+       , fgColor = "#ffffff"
        , position = TopSize C 100 30
        , lowerOnStart = True
        , hideOnStart = False

@@ -3,8 +3,10 @@ Config {
          font = "Iosevka Regular 15;2 "
        -- , additionalFonts = [ "xft:TerminessTTF Nerd Font:style=Regular:pixelsize=15;2" ]
        , additionalFonts = [ "TerminessTTF Nerd Font Regular 12" ]
-       , bgColor = "#140000"
-       , fgColor = "#FDF0D5"
+       -- , bgColor = "#090611"
+       , bgColor = "#ffffff"
+       , fgColor = "#090611"
+       -- , fgColor = "#ffffff"
        , position = TopSize C 100 30
        , lowerOnStart = True
        , hideOnStart = False
@@ -37,7 +39,7 @@ Config {
                                                    "-h", "<fn=1> </fn>",
                                                    "-m", "<fn=1> </fn>",
                                                    "-l", "<fn=1> </fn>",
-                                                   "-C", "#ffffff",
+                                                   "-C", "#090611",
                                                    "-c", "#724372"
                                                   ]
                       -- Wifi (is currently not used, can be inserted with %wi%)
@@ -48,12 +50,11 @@ Config {
                                    "-o", "<fn=1>  </fn><left>%",
                                    "-O", "<fc=#c9af82><fn=1>  </fn><left>%</fc>"
                                   ] 20
-                    , Run Uptime ["-t", "<fn=1> </fn><hours>h <minutes>m"] 20
                       -- Check for updates
                     , Run Com "/home/anders/.config/xmobar/scripts/updates" [] "updates" 36000
                     , Run UnsafeStdinReader
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = "%UnsafeStdinReader% %battery% %updates% } %date% { %uptime% | %wi% | %dynnetwork% | %disku% | %cpu% | %memory% | %thermal0% | %alsa:default:Master%"
+       , template = "%UnsafeStdinReader% %battery% %updates% } %date% { %wi% %dynnetwork% %disku%  %cpu%   %memory%   %thermal0% %alsa:default:Master%"
        }

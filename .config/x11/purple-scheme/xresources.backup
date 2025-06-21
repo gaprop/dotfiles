@@ -1,27 +1,27 @@
 ! dark mode
 !! The basic colors to a terminal
-*color0: #4C4A7D /*!DARK_MODE*/
-*color1: #950E17 /*!DARK_MODE*/
-*color2: #c9af82 /*!DARK_MODE*/
+*color0: #2d1d34 /*!DARK_MODE*/
+*color1: #724372 /*!DARK_MODE*/
+*color2: #ffffff /*!DARK_MODE*/
 *color3: #b18b77 /*!DARK_MODE*/
-*color4: #797270 /*!DARK_MODE*/
-*color5: #AD4C4C /*!DARK_MODE*/
-*color6: #525252 /*!DARK_MODE*/
+*color4: #c9af82 /*!DARK_MODE*/
+*color5: #574dae /*!DARK_MODE*/
+*color6: #947DC2 /*!DARK_MODE*/
 *color7: #e37933 /*!DARK_MODE*/
 
-*color8: #4C4A7D /*!DARK_MODE*/
-*color9: #950E17 /*!DARK_MODE*/
-*color10: #c9af82 /*!DARK_MODE*/
+*color8: #2d1d34 /*!DARK_MODE*/
+*color9: #724372 /*!DARK_MODE*/
+*color10: #ffffff /*!DARK_MODE*/
 *color11: #b18b77 /*!DARK_MODE*/
-*color12: #797270 /*!DARK_MODE*/
-*color13: #AD4C4C /*!DARK_MODE*/
-*color14: #525252 /*!DARK_MODE*/
+*color12: #c9af82 /*!DARK_MODE*/
+*color13: #574dae /*!DARK_MODE*/
+*color14: #947DC2 /*!DARK_MODE*/
 *color15: #e37933 /*!DARK_MODE*/
 
 *cursor: #ffffff /*!DARK_MODE*/
 *reverseCursor: #555555 /*!DARK_MODE*/
-*fg: #FDF0D5 /*!DARK_MODE*/
-*bg: #140000 /*!DARK_MODE*/
+*fg: #8098b1 /*!DARK_MODE*/
+*bg: #090611 /*!DARK_MODE*/
 
 *mode: dark /*!DARK_MODE*/
 
