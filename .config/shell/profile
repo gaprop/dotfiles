@@ -31,6 +31,9 @@ export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history" # For node
 export XAUTHORITY="${XDG_RUNTIME_DIR}/Xauthority" # For Xauthority
 export TEXMFVAR="${XDG_CACHE_HOME:-$HOME/.cache}/texlive/texmf-var"
 export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}"/go, 
+export GOMODCACHE="${XDG_CACHE_HOME:-$HOME/.cache}"/go/mod
 
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
