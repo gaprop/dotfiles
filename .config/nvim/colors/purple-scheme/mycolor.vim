@@ -82,13 +82,13 @@ hi! link markdownRule Comment
 "   let g:terminal_ansi_colors = ['Black', 'DarkRed', 'DarkGreen', 'DarkYellow',
 "         \ 'DarkBlue', 'DarkMagenta', 'DarkCyan', 'LightGrey', 'DarkGrey', 'Red',
 "         \ 'Green', '#962D4C', 'Blue', '#D884C7', 'Cyan', 'White']
-  hi Normal guifg=#FDF0D5 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi Normal guifg=#8098b1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
   hi ColorColumn guifg=NONE guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
   hi Cursor guifg=Black guibg=fg guisp=NONE gui=NONE cterm=NONE
   hi CursorColumn guifg=NONE guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
   hi CursorLine guifg=NONE guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
   hi CursorLineNr guifg=#D4D3D7 guibg=#2C2540 guisp=NONE gui=bold cterm=bold
-  hi DiffAdd guifg=NONE guibg=#AD4C4C guisp=NONE gui=NONE cterm=NONE
+  hi DiffAdd guifg=NONE guibg=#574dae guisp=NONE gui=NONE cterm=NONE
   hi DiffChange guifg=NONE guibg=#FF0000 guisp=NONE gui=NONE cterm=NONE
   hi DiffDelete guifg=Black guibg=#FF0000 guisp=NONE gui=bold cterm=bold
   hi DiffText guifg=NONE guibg=Red guisp=NONE gui=bold cterm=bold
@@ -96,34 +96,34 @@ hi! link markdownRule Comment
   hi Folded guifg=#525252 guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
   hi LineNr guifg=#888690 guibg=NONE guisp=NONE gui=NONE cterm=NONE
   hi NonText guifg=#525252 guibg=NONE guisp=NONE gui=bold cterm=bold
-  hi Pmenu guifg=#FDF0D5 guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
+  hi Pmenu guifg=#8098b1 guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
   hi PmenuSbar guifg=NONE guibg=#3E3B4B guisp=NONE gui=NONE cterm=NONE
-  hi PmenuSel guifg=#FDF0D5 guibg=#525252 guisp=NONE gui=NONE cterm=NONE
-  hi PmenuThumb guifg=NONE guibg=#FDF0D5 guisp=NONE gui=NONE cterm=NONE
+  hi PmenuSel guifg=#8098b1 guibg=#525252 guisp=NONE gui=NONE cterm=NONE
+  hi PmenuThumb guifg=NONE guibg=#8098b1 guisp=NONE gui=NONE cterm=NONE
   hi Search guifg=Black guibg=#962D4C guisp=NONE gui=NONE cterm=NONE
   hi SignColumn guifg=#888690 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi SignColumn guifg=#FDF0D5 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi SpecialKey guifg=#FDF0D5 guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
-  hi StatusLine guifg=#FDF0D5 guibg=#2C2540 guisp=NONE gui=bold,reverse cterm=bold,reverse
-  hi StatusLineNC guifg=#FDF0D5 guibg=#2C2540 guisp=NONE gui=reverse cterm=reverse
+  hi SignColumn guifg=#8098b1 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi SpecialKey guifg=#8098b1 guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
+  hi StatusLine guifg=#8098b1 guibg=#2C2540 guisp=NONE gui=bold,reverse cterm=bold,reverse
+  hi StatusLineNC guifg=#8098b1 guibg=#2C2540 guisp=NONE gui=reverse cterm=reverse
   hi TabLine guifg=#525252 guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
   hi TabLineFill guifg=NONE guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
-  hi TabLineSel guifg=#AD4C4C guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
-  hi Title guifg=#AD4C4C guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi Todo guifg=#950E17 guibg=#4C4A7D guisp=NONE gui=NONE cterm=NONE
+  hi TabLineSel guifg=#574dae guibg=#2C2540 guisp=NONE gui=NONE cterm=NONE
+  hi Title guifg=#574dae guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi Todo guifg=#ffffff guibg=#2d1d34 guisp=NONE gui=NONE cterm=NONE
   hi VertSplit guifg=#2C2540 guibg=#525252 guisp=NONE gui=reverse cterm=reverse
   hi Visual guifg=NONE guibg=#3E3B4B guisp=NONE gui=NONE cterm=NONE
   hi VisualNOS guifg=NONE guibg=NONE guisp=NONE gui=bold,underline ctermfg=NONE ctermbg=NONE cterm=bold,underline
   hi WildMenu guifg=Black guibg=#FF0000 guisp=NONE gui=NONE cterm=NONE
-  hi Comment guifg=#797270 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi Constant guifg=#4C4A7D guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi Error guifg=#FDF0D5 guibg=Red guisp=NONE gui=NONE cterm=NONE
+  hi Comment guifg=#495495 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi Constant guifg=#724372 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi Error guifg=#8098b1 guibg=Red guisp=NONE gui=NONE cterm=NONE
   hi Identifier guifg=#525252 guibg=NONE guisp=NONE gui=NONE cterm=NONE
   hi Ignore guifg=Black guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi Include guifg=#AD4C4C guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi PreProc guifg=#950E17 guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi Special guifg=#4C4A7D guibg=NONE guisp=NONE gui=NONE cterm=NONE
-  hi Statement guifg=#950E17 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi Include guifg=#574dae guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi PreProc guifg=#ffffff guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi Special guifg=#724372 guibg=NONE guisp=NONE gui=NONE cterm=NONE
+  hi Statement guifg=#ffffff guibg=NONE guisp=NONE gui=NONE cterm=NONE
   hi String guifg=#b18b77 guibg=NONE guisp=NONE gui=NONE cterm=NONE
   hi Type guifg=#c9af82 guibg=NONE guisp=NONE gui=NONE cterm=NONE
   hi Underlined guifg=#FF0000 guibg=NONE guisp=NONE gui=underline cterm=underline
@@ -261,7 +261,7 @@ endif
 " Color: darkyellow           DarkYellow             3        DarkYellow
 " Color: darkgrey             DarkGrey               8        DarkGrey
 " Color: s_steelgray          #262335                8        DarkGray
-" Color: s_white              #FDF0D5                7        LightGray
+" Color: s_white              #8098b1                7        LightGray
 " Color: s_tolopea            #2C2540                7        LightGray
 " Color: s_oslogray           #888690                7        LightGray
 " Color: s_lightgray          #D4D3D7                7        LightGray
@@ -272,7 +272,7 @@ endif
 " Color: s_lightred           #FF0000                224      LightRed
 " Color: s_magenta            #FF0000                13       Magenta
 " Color: s_orange             #EA9652                224      LightRed
-" Color: s_green              #AD4C4C                121      LightGreen
+" Color: s_green              #574dae                121      LightGreen
 " Term Colors: black darkred darkgreen darkyellow darkblue darkmagenta darkcyan lightgrey
 " Term Colors: darkgrey red green s_yellow blue s_magenta cyan white
 " Background: dark
