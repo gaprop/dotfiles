@@ -28,6 +28,6 @@ case "$1" in
   h)       hot;;
   list) nmcli dev wifi ;;
   l)    nmcli dev wifi ;;
-  diconnect) nmcli dev disconnect wlo1 ;;
-  d)         nmcli dev disconnect wlo1 ;;
+  diconnect) nmcli dev disconnect wlan0 ;;
+  d)         nmcli dev disconnect wlan0 ;;
 esac
