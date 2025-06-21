@@ -141,8 +141,8 @@ set number
 set expandtab "!MOD:VIMTAB
 
 "Makes tabulation with number of spaces
-set tabstop=4 "!MOD:VIMTAB
-set shiftwidth=4 "!MOD:VIMTAB
+set tabstop=2 "!MOD:VIMTAB
+set shiftwidth=2 "!MOD:VIMTAB
 
 " Add one space after comment
 let g:NERDSpaceDelims = 1
