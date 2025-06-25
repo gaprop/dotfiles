@@ -1,6 +1,6 @@
 [global]
     frame_width = 1
-    frame_color = "#c9af82"
+    frame_color = "#ffffff"
     
     font = Iosevka 12
     
@@ -181,18 +181,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the "#" and following would be interpreted as a comment.
-    background = "#140000"
-    foreground = "#FDF0D5"
+    background = "#090611"
+    foreground = "#c9af82"
     timeout = 3
 
 [urgency_normal]
-    background = "#140000"
-    foreground = "#FDF0D5"
+    background = "#090611"
+    foreground = "#c9af82"
     timeout = 3
 
 [urgency_critical]
-    background = "#140000"
-    foreground = "#FDF0D5"
+    background = "#090611"
+    foreground = "#c9af82"
     timeout = 10
 
 
