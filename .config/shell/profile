@@ -34,6 +34,7 @@ export DOCKER_CONFIG="${XDG_CONFIG_HOME:-$HOME/.config}"/docker
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
 export GOPATH="${XDG_DATA_HOME:-$HOME/.local/share}"/go, 
 export GOMODCACHE="${XDG_CACHE_HOME:-$HOME/.cache}"/go/mod
+export GNUPGHOME="$XDG_DATA_HOME"/gnupg
 
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
