@@ -7,11 +7,11 @@ set sandbox none
 
 set font "Fira Code 12"
 
-set default-fg "#FDF0D5"
-set default-bg "#140000"
+set default-fg "#58697B"
+set default-bg "#090611"
 
-set recolor-lightcolor "#140000"
-set recolor-darkcolor "#FDF0D5"
+set recolor-lightcolor "#090611"
+set recolor-darkcolor "#9e9e9e"
 
 map D toggle_page_mode
 map K zoom in
