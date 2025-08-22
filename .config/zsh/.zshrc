@@ -30,7 +30,7 @@ alias n=nvim
 alias nb=newsboat
 alias gtj=". gtj"
 alias grep="grep --color"
-
+alias k=kubectl
 
 zat() {
     #nohup zathura "$1" >/dev/null 2>&1 &
